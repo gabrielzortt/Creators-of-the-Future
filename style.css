@@ -6,82 +6,80 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
   color: #333;
-  line-height: 1.6;
   padding: 20px;
+  line-height: 1.6;
 }
 
-/* Barra de pesquisa e header */
-header {
+/* Barra de pesquisa e auth */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-}
-
-.search-container {
-  width: 100%;
-  max-width: 600px;
+  gap: 10px;
 }
 
 .search-bar {
   width: 100%;
-  padding: 12px 15px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
+  max-width: 600px;
+  padding: 12px;
   font-size: 1rem;
-  transition: 0.3s;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .search-bar:focus {
   outline: none;
-  border-color: #0d47a1;
-  box-shadow: 0 0 8px rgba(13,71,161,0.4);
+  border-color: #1a237e;
+  box-shadow: 0 0 5px #1a237e;
 }
 
 .auth-buttons {
-  display: flex;
-  gap: 10px;
+  margin-top: 10px;
 }
 
-/* Botões estilo B */
-button {
-  padding: 10px 20px;
+.auth-buttons button, .user-info button {
+  padding: 8px 15px;
+  margin: 0 5px;
   border: none;
-  border-radius: 12px;
-  cursor: pointer;
+  border-radius: 8px;
+  background-color: #1a237e;
+  color: white;
   font-size: 1rem;
-  transition: 0.3s;
-  background-color: #0d47a1;
-  color: #fff;
-  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #1565c0;
+.auth-buttons button:hover, .user-info button:hover {
+  background-color: #283593;
 }
 
 /* Seção Quem Somos */
 #quem-somos {
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: #444;
   text-align: center;
   max-width: 900px;
-  margin: 40px auto;
-  color: #222;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #quem-somos h2 {
-  color: #0d47a1;
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
+  color: #1a237e;
 }
 
-.logo-quem-somos {
-  width: 150px;
+#quem-somos .logo-quem-somos {
+  width: 200px;
   margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 /* Produtos */
@@ -90,34 +88,35 @@ button:hover {
 }
 
 .outros-ebooks h2 {
-  text-align: center;
-  color: #0d47a1;
   font-size: 2rem;
-  margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a237e;
 }
 
 .produto {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
   gap: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
 .produto:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .produto img {
   width: 150px;
   height: 225px;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
 .produto-info {
@@ -126,39 +125,81 @@ button:hover {
 
 .produto-info h3 {
   font-size: 1.6rem;
-  color: #0d47a1;
+  color: #2c3e50;
   margin-bottom: 10px;
 }
 
 .produto-info p {
-  font-size: 1rem;
-  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
 }
 
 .valor {
   font-weight: bold;
-  color: #1565c0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #1a237e;
 }
 
-/* FAQ */
-.faq .pergunta {
+button.btn-comprar {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #1a237e;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.btn-comprar:hover {
+  background-color: #283593;
+}
+
+/* Biblioteca */
+#biblioteca {
+  margin-top: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#biblioteca h2 {
+  font-size: 2rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+#biblioteca-list div {
+  background: #fff;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* FAQ e Avaliações */
+.faq .pergunta, .avaliacao {
   background-color: #fff;
   padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s;
 }
 
-.faq .pergunta:hover {
+.faq .pergunta:hover, .avaliacao:hover {
   transform: translateY(-2px);
 }
 
 .faq .pergunta p {
   display: none;
   margin-top: 10px;
+  color: #333;
+  font-size: 1rem;
 }
 
 .faq .pergunta.ativo p {
@@ -170,113 +211,82 @@ button:hover {
   margin-top: 20px;
 }
 
-.avaliacao {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.avaliacao:hover {
-  transform: translateY(-2px);
-}
-
 .avaliacao h4 {
-  color: #0d47a1;
+  font-size: 1.2rem;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.avaliacao p {
+  font-size: 1rem;
+  color: #444;
   margin-bottom: 5px;
 }
 
 .avaliacao span {
   color: #fbc02d;
+  font-size: 1rem;
 }
 
 /* Ajuda */
 #ajuda {
-  text-align: center;
   margin-top: 40px;
+  text-align: center;
 }
 
 #ajuda .telefone {
-  color: #0d47a1;
   font-weight: bold;
+  color: #1a237e;
   font-size: 1.2rem;
-}
-
-/* Biblioteca */
-#biblioteca {
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-#biblioteca h2 {
-  color: #0d47a1;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.biblioteca-item {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-weight: bold;
-  color: #1565c0;
-  text-align: center;
 }
 
 /* Rodapé */
 footer {
-  background-color: #0d47a1;
+  background: #1a237e;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   margin-top: 40px;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
-/* Modal login/cadastro */
+/* Modais */
 .modal {
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.6);
+  top:0; left:0; right:0; bottom:0;
   display:none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  justify-content:center;
+  align-items:center;
+  background: rgba(0,0,0,0.5);
+  z-index:1000;
 }
 
 .modal-content {
   background:#fff;
-  padding:25px;
-  border-radius:12px;
-  width:90%;
+  padding:20px;
+  border-radius:8px;
+  width: 90%;
   max-width:400px;
   text-align:center;
 }
 
 .modal-content input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  width: 100%;
+  padding:10px;
+  margin:5px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
 }
 
 .modal-content .actions {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
+  display:flex;
+  justify-content: space-between;
+  margin-top:10px;
 }
 
-.modal-content button {
-  width: 45%;
+.modal-content .actions button {
+  flex:1;
+  margin: 0 5px;
 }
 
 /* Responsividade */
@@ -285,13 +295,15 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-
   .produto img {
     width: 120px;
     height: 180px;
   }
-
-  button {
+  .produto-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  button, .auth-buttons button {
     width: 100%;
   }
 }

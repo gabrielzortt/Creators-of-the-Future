@@ -1,3 +1,4 @@
+
 /* Reset básico */
 * {
   margin: 0;
@@ -13,10 +14,10 @@ body {
   line-height: 1.6;
 }
 
-/* Barra de pesquisa e auth */
+/* Barra de Pesquisa */
 .search-container {
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,13 +40,8 @@ body {
   box-shadow: 0 0 5px #1a237e;
 }
 
-.auth-buttons {
-  margin-top: 10px;
-}
-
-.auth-buttons button, .user-info button {
-  padding: 8px 15px;
-  margin: 0 5px;
+button {
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   background-color: #1a237e;
@@ -55,7 +51,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.auth-buttons button:hover, .user-info button:hover {
+button:hover {
   background-color: #283593;
 }
 
@@ -76,10 +72,13 @@ body {
   color: #1a237e;
 }
 
+/* Logo dentro da seção Quem Somos */
 #quem-somos .logo-quem-somos {
-  width: 200px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+  max-width: 200px; /* controla o tamanho da logo */
+  height: auto;     /* mantém proporção */
+  border-radius: 10px; /* opcional: cantos arredondados */
 }
 
 /* Produtos */
@@ -140,44 +139,6 @@ body {
   margin-bottom: 15px;
   font-size: 1.2rem;
   color: #1a237e;
-}
-
-button.btn-comprar {
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: #1a237e;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button.btn-comprar:hover {
-  background-color: #283593;
-}
-
-/* Biblioteca */
-#biblioteca {
-  margin-top: 40px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-#biblioteca h2 {
-  font-size: 2rem;
-  color: #1a237e;
-  margin-bottom: 20px;
-}
-
-#biblioteca-list div {
-  background: #fff;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* FAQ e Avaliações */
@@ -250,60 +211,24 @@ footer {
   border-radius: 8px;
 }
 
-/* Modais */
-.modal {
-  position: fixed;
-  top:0; left:0; right:0; bottom:0;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  background: rgba(0,0,0,0.5);
-  z-index:1000;
-}
-
-.modal-content {
-  background:#fff;
-  padding:20px;
-  border-radius:8px;
-  width: 90%;
-  max-width:400px;
-  text-align:center;
-}
-
-.modal-content input {
-  width: 100%;
-  padding:10px;
-  margin:5px 0;
-  border-radius:5px;
-  border:1px solid #ccc;
-}
-
-.modal-content .actions {
-  display:flex;
-  justify-content: space-between;
-  margin-top:10px;
-}
-
-.modal-content .actions button {
-  flex:1;
-  margin: 0 5px;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .produto {
     flex-direction: column;
     text-align: center;
   }
+
   .produto img {
     width: 120px;
     height: 180px;
   }
+
   .produto-info {
     margin-left: 0;
     margin-top: 10px;
   }
-  button, .auth-buttons button {
+
+  button {
     width: 100%;
   }
 }

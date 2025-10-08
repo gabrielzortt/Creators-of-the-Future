@@ -642,6 +642,60 @@
 
   })();
   </script>
+  // ... (todo o seu script original)
+  onAuthChange(!!getCurrent());
+  })();
+
+  <!-- Script do EmailJS -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init({
+        publicKey: "X1vXv_KgkseMQe4vW",
+      });
+    })();
+
+    async function sendRecoveryEmail(userEmail, userName) {
+      const token = Math.random().toString(36).substring(2, 10).toUpperCase();
+      try {
+        const result = await emailjs.send(
+          "service_cwz8ffj",
+          "template_8fx2o6s",
+          {
+            to_email: userEmail,
+            user_name: userName,
+            reset_token: token
+          }
+        );
+        console.log("Email enviado:", result.status, result.text);
+        alert("Um e-mail com o código de recuperação foi enviado para " + userEmail);
+        localStorage.setItem("resetToken", token);
+      } catch (error) {
+        console.error("Erro ao enviar e-mail:", error);
+        alert("Erro ao enviar o e-mail de recuperação. Tente novamente.");
+      }
+    }
+
+    document.querySelector("#forgot-password-btn").addEventListener("click", async () => {
+      const emailInput = document.querySelector("#login-email");
+      const userEmail = emailInput.value.trim();
+      if (!userEmail) {
+        alert("Digite seu e-mail para recuperar a senha.");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+      const user = users[userEmail];
+      if (!user) {
+        alert("Nenhuma conta encontrada com esse e-mail.");
+        return;
+      }
+
+      await sendRecoveryEmail(userEmail, user.name || "Usuário");
+    });
+  </script>
+</body>
+</html>
   <!-- FIM: SESSÃO DE USUÁRIO (INJETÁVEL) -->
 
 </body>
